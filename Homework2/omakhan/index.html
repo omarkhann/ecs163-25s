@@ -1,0 +1,88 @@
+<!doctype html>
+<html style="width:100%;height:100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>D3 Example</title>
+    <style>
+        /* Add CSS for layout */
+        body {
+            display: flex;
+            flex-direction: row; /* Horizontal layout for Sankey and other visuals */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+			background-color: rgb(254, 240, 220);
+        }
+
+        #left-container {
+            flex: 2; /* 2/3 of the page */
+            display: flex;
+            flex-direction: column; /* Stack legend and Sankey vertically */
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #title-container {
+            width: 90%; /* Adjust width to fit nicely */
+            height: 15%; /* Legend takes up a small portion above the Sankey */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #sankey-container {
+            width: 90%; /* Adjust width to fit nicely */
+            flex: 1; /* Sankey takes up the remaining space in the left column */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #other-visuals {
+            flex: 1; /* 1/3 of the page */
+            display: flex;
+            flex-direction: column; /* Stack bar chart and scatter plot vertically */
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #bar-chart-container {
+            width: 95%; /* Adjust width to fit nicely */
+            height: 50%; /* Each takes up half of the right-side container */
+			overflow: auto;
+        }
+
+		#pie-chart-container {
+            width: 80%; /* Adjust width to fit nicely */
+            height: 50%; /* Each takes up half of the right-side container */
+			overflow: auto;
+        }
+
+		#title-container h1 {
+			text-align: center;
+			margin: 0;
+			font-size: 50px;
+			font-weight: bold;
+		}
+
+    </style>
+</head>
+<body>
+    <div id="left-container">
+        <div id="title-container">
+			    <h1>Student Mental Health Visualizations</h1>
+		</div> 
+        <div id="sankey-container"></div>
+    </div>
+
+    <div id="other-visuals">
+        <div id="bar-chart-container"></div>
+        <div id="pie-chart-container"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
